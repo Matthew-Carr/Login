@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #CCB103;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #DBDE00;
+  color: white;
+}
+</style>
+</head>
+<body>
+<div class="topnav">
+    <a href="/">Home</a>
+  <a class="active" href="/login">Log In</a>
+  <a href="/createaccount">Create Account</a>
+
+</div>
+<p>
+Please Enter your Account Details
+</p>
+
+<form action="{{  url_for('submitloginform') }}" method="post" id="form">
+     <label for="fullname">Full Name:</label><br>
+  <input type="text" id="fullname" name="userFullName"><br>
+    <label for="email">Email Address:</label><br>
+  <input type="email" id="email" name="userEmail"><br>
+  <label for="pwd">Password:</label><br>
+  <input type="password" id="pwd" name="userPassword">
+    <input type="submit" id="submit">
+
+</form>
+
+</body>
+</html>
